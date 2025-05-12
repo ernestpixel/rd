@@ -3,7 +3,6 @@
 // import { useTheme } from 'next-themes';
 // import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import MultiStepForm from "@/components/MultiStepForm";
 
 // const themes = [
