@@ -1,29 +1,29 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+// import { useTheme } from 'next-themes';
+// import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import MultiStepForm from "@/components/MultiStepForm";
 
-const themes = [
-  { value: 'system', icon: ComputerDesktopIcon, label: 'System' },
-  { value: 'light', icon: SunIcon, label: 'Light' },
-  { value: 'dark', icon: MoonIcon, label: 'Dark' },
-];
+// const themes = [
+//   { value: 'system', icon: ComputerDesktopIcon, label: 'System' },
+//   { value: 'light', icon: SunIcon, label: 'Light' },
+//   { value: 'dark', icon: MoonIcon, label: 'Dark' },
+// ];
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+//   const { theme, setTheme } = useTheme();
+//   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+//   // Prevent hydration mismatch
+//   useEffect(() => {
+//     setMounted(true);
+//   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+//   if (!mounted) {
+//     return null;
+//   }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -48,7 +48,8 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* Theme Switcher */}
+        {/* Theme Switcher - hidden for now */}
+        {/*
         <div className="flex items-center">
           <div className="flex bg-transparent border border-gray-400/60 dark:border-gray-600/60 rounded-full p-1 gap-1 shadow-sm">
             {themes.map(({ value, icon: Icon, label }) => {
@@ -72,6 +73,7 @@ export default function Home() {
             })}
           </div>
         </div>
+        */}
       </header>
 
       {/* Form Container */}
