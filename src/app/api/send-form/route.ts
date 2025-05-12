@@ -17,7 +17,8 @@ export async function POST(req: NextRequest) {
       <h2>Formular Website Factory</h2>
       ${formatEntry('Care este domeniul principal de activitate al afacerii tale?', data.activity)}
       ${formatEntry('Câte persoane lucrează în compania ta?', data.employees)}
-      ${formatEntry('Ai deja un website realizat de Website Factory?', data.hasWebsite)}
+      ${formatEntry('Ai deja un website activ?', data.hasWebsite)}
+      ${data.hasWebsite === 'Da' ? formatEntry('Platforma pe care e construit website-ul', data.websitePlatform) : ''}
       ${formatEntry('Care sunt cele mai consumatoare de timp activități administrative sau repetitive în afacerea ta?', data.timeConsuming)}
       ${formatEntry('Folosești în prezent vreun tool pentru automatizare?', data.usesAutomation)}
       ${data.usesAutomation === 'Da' ? formatEntry('Ce tool-uri folosești?', data.automationTools) : ''}

@@ -19,6 +19,7 @@ export default function MultiStepForm() {
   const [activityOther, setActivityOther] = useState("");
   const [employees, setEmployees] = useState("");
   const [hasWebsite, setHasWebsite] = useState("");
+  const [websitePlatform, setWebsitePlatform] = useState("");
 
   // State for step 2 fields
   const [timeConsuming, setTimeConsuming] = useState<string[]>([]);
@@ -110,6 +111,7 @@ export default function MultiStepForm() {
       activity: activity === 'Altul' ? activityOther : activity,
       employees,
       hasWebsite,
+      websitePlatform: hasWebsite === 'Da' ? websitePlatform : '',
       timeConsuming: timeConsuming.includes('Altul')
         ? [...timeConsuming.filter((v) => v !== 'Altul'), timeConsumingOther]
         : timeConsuming,
@@ -275,7 +277,7 @@ export default function MultiStepForm() {
                 {/* Ai deja un website realizat de Website Factory? */}
                 <div>
                   <label className="block text-base font-medium mb-3 text-gray-900 dark:text-gray-100">
-                    Ai deja un website realizat de Website Factory?
+                    Ai deja un website activ?
                   </label>
                   <div className="space-y-2">
                     {[
@@ -300,6 +302,40 @@ export default function MultiStepForm() {
                     ))}
                   </div>
                 </div>
+
+                {/* Platforma pe care e construit website-ul (optional) */}
+                {hasWebsite === "Da" && (
+                  <div>
+                    <label className="block text-base font-medium mb-3 text-gray-900 dark:text-gray-100">
+                      Platforma pe care e construit website-ul <span className="text-xs text-gray-500">(opțional)</span>
+                    </label>
+                    <div className="space-y-2">
+                      {[
+                        "Wordpress / WooCommerce",
+                        "Magento",
+                        "Prestashop",
+                        "OpenCart",
+                        "Shopify",
+                        "Custom",
+                      ].map((option) => (
+                        <div key={option} className="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            id={`platform-${option}`}
+                            name="websitePlatform"
+                            value={option}
+                            checked={websitePlatform === option}
+                            onChange={() => setWebsitePlatform(option)}
+                            className="accent-[#3028b2] w-4 h-4 rounded-full border-gray-300 dark:border-gray-600"
+                          />
+                          <label htmlFor={`platform-${option}`} className="text-gray-800 dark:text-gray-200 text-sm">
+                            {option}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
             {step === 1 && (
