@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Multi-step Form",
-  description: "A multi-step form with dark mode support",
+  title: "R&D Automatizari - Website Factory",
+  description: "Formular pentru cercetarea nevoilor de automatizare a clientilor Website Factory",
 };
 
 export default function RootLayout({
